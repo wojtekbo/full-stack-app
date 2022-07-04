@@ -1,5 +1,9 @@
 //selectors
 export const getPermissions = ({permissions}) => permissions;
+export const isAuthorised = ({permissions}) => {
+  if (permissions.authorised === true) return true;
+  else return false;
+};
 
 // actions
 const createActionName = actionName => `app/permissions/${actionName}`;

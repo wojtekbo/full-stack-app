@@ -7,15 +7,17 @@ import {Routes, Route} from 'react-router-dom';
 import EditablePost from './components/pages/EditablePost/EditablePost';
 import Post from './components/pages/Post/Post';
 import AuthDropdown from './components/common/AuthDropdown/AuthDropdown';
+import SearchResults from './components/pages/SearchResults/SearchResults';
 
 function App() {
   return (
     <div className="App">
       <Container>
-        <AuthDropdown />
+        <AuthDropdown className="text-center" />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/search/:searchPhrase" element={<SearchResults />} />
           <Route path="/post/:id" element={<Post />} />
           <Route path="/post/add" element={<EditablePost />} />
           <Route path="/post/edit/:id" element={<EditablePost />} />

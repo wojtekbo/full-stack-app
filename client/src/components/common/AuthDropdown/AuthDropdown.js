@@ -13,7 +13,7 @@ const AuthDropdown = () => {
   };
 
   return (
-    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+    <DropdownButton className="my-2" id="dropdown-basic-button" title="Dropdown button">
       <Dropdown.Item href="#" onClick={() => clickHeandler('login')}>
         Zalogowany
       </Dropdown.Item>

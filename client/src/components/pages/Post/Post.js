@@ -7,16 +7,16 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/esm/Button';
 
 import {getPostById, deletePost} from '../../../redux/postsRedux';
-import {isAuthorised} from '../../../redux/permissionsRedux';
+import {getUser} from '../../../redux/userRedux';
 
 const Post = props => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {id} = useParams();
   const post = useSelector(state => getPostById(state, id));
-  const userLoged = useSelector(state => isAuthorised(state));
+  const userLogged = useSelector(state => getUser(state));
+
   const handleDelete = () => {
-    console.log('delete: ', post.id);
     dispatch(deletePost(id));
     navigate(`/`);
   };
@@ -26,12 +26,12 @@ const Post = props => {
       <div className="header d-flex justify-content-between">
         <h3>Title: {post.title}</h3>
         <div className="buttons d-flex">
-          {userLoged && (
+          {userLogged === post.user.login && (
             <Nav.Link className="me-2 p-0" as={NavLink} to={`/post/edit/${post.id}`}>
               <Button variant="success">Edit</Button>
             </Nav.Link>
           )}
-          {userLoged && (
+          {userLogged === post.user.login && (
             <Button onClick={handleDelete} variant="danger">
               Delete
             </Button>

@@ -2,11 +2,11 @@ import {createStore, combineReducers} from 'redux';
 
 import initialState from './initialState';
 import postsRedux from './postsRedux.js';
-import permissionsRedux from './permissionsRedux.js';
+import userRedux from './userRedux.js';
 
 const subreducers = {
   posts: postsRedux,
-  permissions: permissionsRedux,
+  user: userRedux,
 };
 
 const reducer = combineReducers(subreducers);

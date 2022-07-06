@@ -4,10 +4,11 @@ import HomePage from './components/pages/HomePage/HomePage';
 import NotFound from './components/pages/NotFound/NotFound';
 import Header from './components/views/Header/Header';
 import {Routes, Route} from 'react-router-dom';
-import EditablePost from './components/pages/EditablePost/EditablePost';
 import Post from './components/pages/Post/Post';
 import AuthDropdown from './components/common/AuthDropdown/AuthDropdown';
 import SearchResults from './components/pages/SearchResults/SearchResults';
+import AddPost from './components/pages/AddPost/AddPost';
+import EditPost from './components/pages/EditPost/EditPost';
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/search/:searchPhrase" element={<SearchResults />} />
           <Route path="/post/:id" element={<Post />} />
-          <Route path="/post/add" element={<EditablePost />} />
-          <Route path="/post/edit/:id" element={<EditablePost />} />
+          <Route path="/post/add" element={<AddPost />} />
+          <Route path="/post/edit/:id" element={<EditPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>

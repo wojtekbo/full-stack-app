@@ -36,7 +36,7 @@ const initialState = {
       id: '3',
       title: 'Tani odkurzacz bezworkowy',
       content: 'Nam beatae repellat est dolor',
-      publishedDate: new Date('2022.01.01'),
+      publishedDate: new Date('2022.03.01'),
       photo: './photos/1.jpg',
       price: '126',
       localization: 'Gdańsk',
@@ -49,8 +49,7 @@ const initialState = {
       },
     },
   ],
-  permissions: {
-    authorised: false,
+  user: {
     login: 'peter_smth',
   },
 };

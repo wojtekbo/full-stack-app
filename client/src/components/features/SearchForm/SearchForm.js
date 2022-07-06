@@ -14,7 +14,7 @@ const SearchForm = () => {
     navigate(`/search/${searchPhrase}`);
   };
   return (
-    <Form onSubmit={e => submitForm(e)} className="d-flex w-50">
+    <Form onSubmit={e => submitForm(e)} className="d-flex">
       <FormControl type="text" value={searchPhrase} onChange={e => setSearchPhrase(e.target.value)} placeholder="Search" className="me-2" aria-label="Search" />
       <Button type="submit" variant="outline-success">
         Search

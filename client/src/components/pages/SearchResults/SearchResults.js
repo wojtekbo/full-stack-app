@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PostsList from '../../features/PostsList/PostsList';
 import {useParams} from 'react-router';
-import {useSelector} from 'react-redux';
-import {searchPostByTitle} from '../../../redux/postsRedux';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchGetAllPosts, searchPostByTitle} from '../../../redux/postsRedux';
 
 const SearchResults = () => {
   const {searchPhrase} = useParams();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGetAllPosts());
+  }, [dispatch]);
+
   const posts = useSelector(state => searchPostByTitle(state, searchPhrase));
 
   if (posts.length !== 0)

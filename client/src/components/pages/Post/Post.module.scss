@@ -1,0 +1,29 @@
+.post {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 247, 247);
+  padding: 15px;
+  border-radius: 10px;
+}
+.header {
+  margin-bottom: 10px;
+}
+
+.post_content {
+  display: flex;
+  flex-direction: row;
+}
+.post_photo {
+  width: 40%;
+  .main_photo {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+
+.post_text {
+  padding: 0 10px 0 30px;
+  width: 60%;
+}

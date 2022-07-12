@@ -2,7 +2,7 @@ import React from 'react';
 import PostForm from '../../features/PostForm/PostForm';
 import {getUser} from '../../../redux/userRedux';
 import {useDispatch, useSelector} from 'react-redux';
-import {addPost} from '../../../redux/postsRedux';
+import {fetchPostNewPost} from '../../../redux/postsRedux';
 import {useNavigate} from 'react-router-dom';
 
 const AddPost = () => {
@@ -10,7 +10,8 @@ const AddPost = () => {
   const dispatch = useDispatch();
   const userLogged = useSelector(state => getUser(state));
   const handleClick = post => {
-    dispatch(addPost(post));
+    dispatch(fetchPostNewPost(post));
+    console.log('formularz post', post);
     navigate('/');
   };
 

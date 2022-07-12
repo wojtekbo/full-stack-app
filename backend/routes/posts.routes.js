@@ -24,7 +24,6 @@ router.get('/posts/:id', async (req, res) => {
 });
 
 router.post('/posts', async (req, res) => {
-  console.log(req.body);
   try {
     const {title, content, user, publishedDate, updatedDate, status, price, localization, phone} = req.body;
     const newPost = new Post({

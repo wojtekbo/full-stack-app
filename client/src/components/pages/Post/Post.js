@@ -17,7 +17,7 @@ const Post = props => {
 
   useEffect(() => {
     dispatch(fetchGetPostById(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const post = useSelector(state => getPostById(state, id));
   const userLogged = useSelector(state => getUser(state));
@@ -60,7 +60,7 @@ const Post = props => {
               <p>{post.content}</p>
               {post.localization && <p>Localization: {post.localization}</p>}
               {post.price && <p>Price: {post.price}</p>}
-              <p>Add date: {post.publishedDate}</p>
+              <p>Add date: {new Date(post.publishedDate).toLocaleString()}</p>
               <p>User: {post.user}</p>
               {post.phoneNumber && <p>Phone number: {post.phoneNumber}</p>}
             </div>

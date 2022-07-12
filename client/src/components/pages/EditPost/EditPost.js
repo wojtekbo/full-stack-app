@@ -14,7 +14,7 @@ const EditPost = () => {
 
   useEffect(() => {
     dispatch(fetchGetPostById(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const post = useSelector(state => getPostById(state, id));
   const userLogged = useSelector(state => getUser(state));
@@ -22,7 +22,7 @@ const EditPost = () => {
   const {title, content, publishedDate, photo, price, localization, user, phone} = post;
 
   const handleClick = post => {
-    dispatch(editPost({...post, id}));
+    // dispatch(editPost({...post, id}));
     navigate('/');
   };
 
